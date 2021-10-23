@@ -2,16 +2,14 @@ import random, replit, json
 gameOver = 0
 yes = {"yes","yea","y",}
 no = ("n","no")
-def pickWord():
-  with open('wordList.json') as json_file:
-      data = json.load(json_file)
-
-  wordChoice = data[random.choice(list(data))]
-  return
-
+x = 1
+def pickWord(x):
+  x = random.choice(open("wordList.txt").read().split())
+  print (x)
+  return x
 while 1==1:
-  pickWord()
-  print(wordChoice)
+  x = pickWord(x)
+  print(x)
   startOver = input("Would you like to play again?\n \n Y/N\n").lower()
   if (startOver in yes):
     gameOver = 0
